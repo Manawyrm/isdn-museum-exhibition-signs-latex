@@ -1,0 +1,55 @@
+\documentclass[12,a4paper]{article}
+\usepackage{classiccomputing}
+
+\newcommand\postertype{lightgray}
+
+\begin{document}
+
+\makecclogo
+
+\author{Manawyrm} % owner of the device, also used as "Author" in PDF export
+\title{T-View 100}
+\def\subtitle{ISDN-Bildtelefon}
+\def\introduction{Markteinführung 1997}
+\makeheader{40}{40} % title size 60, subtitle size 40
+
+\includeimage {images/tview1200.png}{0.4}
+
+\makebullets{
+    Land: Deutschland \newline
+    Preis: 1000 DM \newline
+   
+    Architektur: 32 Bit \newline
+    % CPU:
+    % RAM: 
+    % ROM: 
+    % Grafik: 
+    % Sound:
+    2x Motorola 68000 CPU \newline
+
+    Hersteller: Siemens / Telekom \newline
+    Codecs: H.263, H.261, G.722 \newline
+    Auflösung: 352 x 288 oder 176 x 144 \newline
+}
+
+\makemain{
+    Das T-View 100 nutzt Kanalbündelung um Bild/Ton mit 128kBit/s zu übertragen.\newline
+    
+    Es nutzt dabei den Standard H.320 zur Aushandlung von Codecs (ähnlich H.323/NetMeeting).\newline
+    
+    Als Basistelefon wurde das Mainboard vom Siemens ProfiTel 70, allerdings mit anderer
+    Firmware verwendet. Videoein- \& ausgabe erfolgt mittels Composite-Video.\newline
+    Ein Philips SAA7111 (wie auf TV-Karten) kümmert sich um die Digitalisierung.\newline
+    
+    RS232-Schnittstelle ermöglicht Anschluss von Zusatzgeräten, z.B. Stroboskoplampen
+    für gehörlose Menschen.\newline
+    
+    Manche VHS-Rekorder liessen sich über das T-View fernbedienen (z.B. um ein
+    Überwachungsvideo aus der Ferne abzurufen).\newline
+    
+    Es gab öffentliche Webcams per H.320.\newline
+}
+
+\makefooter
+
+\end{document}

@@ -1,0 +1,122 @@
+% based on Lana Sinapayen's Better Poster for scientific presentation
+
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+\usepackage[export]{adjustbox}
+\usepackage{anyfontsize}
+\usepackage[T1]{fontenc}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{hyphenat}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage{vwcol}  
+\usepackage{tikz}
+\usepackage{paratype}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+
+\pagecolor{white}
+
+% set margins
+\newcommand\postermargin{2cm}
+\usepackage[margin=\postermargin, top=1cm, bottom=1cm]{geometry}
+
+% sans serif font
+\renewcommand{\familydefault}{\sfdefault}
+% sets page numbering off
+\pagenumbering{gobble}
+% images path
+\graphicspath{{./images/}}
+
+% poster color
+\colorlet{lightgray}{lightgray}
+
+\newcommand{\makecclogo}[0]{
+    \begin{flushright}
+        \includegraphics[width=0.4\textwidth]{images/0.png}
+    \end{flushright}
+}
+
+% makes header
+\newcommand{\makeheader}[2]{
+    \vspace*{0cm} % get rid of random white space
+    \noindent\makebox[\linewidth][c]{%
+      \colorbox{\postertype}{%
+        \parbox[t][0.2\paperheight][c]{\paperwidth}{%
+            \hspace*{\dimexpr\hoffset+\oddsidemargin+1in\relax}%
+            \begin{minipage}{\textwidth}
+            \textcolor{darkgray}
+            {\fontsize{#1}{10} \selectfont
+            \begin{flushleft}
+                 \nohyphens{\@title}
+            \end{flushleft}
+            }
+          \textcolor{purple}
+            {\fontsize{#2}{10} \selectfont
+            \begin{flushleft}
+                 \nohyphens{\subtitle}
+            \end{flushleft}
+            }
+          \end{minipage}%
+        }%
+      }%
+    }\par\medskip
+
+}
+
+\def\@maketitle{
+  \vspace{0cm}
+    {\Huge \bf
+        \textcolor{darkgray}
+        {
+            \begin{flushleft}
+                \introduction
+            \end{flushleft}
+        }
+    }
+}
+
+% makes footer
+\newcommand{\makefooter}[0]{
+    \vspace*{\fill}
+    \noindent\makebox[\linewidth][c]{%
+      \colorbox{\postertype}{%
+        \parbox[c][0.10\paperheight][c]{\paperwidth}{%
+          \hspace*{\dimexpr\hoffset+\oddsidemargin+1.2cm\relax}%
+          \begin{minipage}[c][0.10\paperheight][c]{0.12\textwidth}
+                \includegraphics[height=0.07\paperheight, left]{images/isdn-museumde.png}
+          \end{minipage}
+        }%
+      }%
+    }\par\medskip
+}
+
+\usepackage{blindtext}
+
+\newcommand{\includeimage}[2] {
+   \begin{wrapfigure}[0]{r}{#2\textwidth}
+        \raggedright
+        \includegraphics[width=1\linewidth]{#1}
+    \end{wrapfigure}
+}
+
+\newcommand{\makebullets}[1] {
+    % Markteinfuehrung
+    {\let\newpage\relax\maketitle}
+    
+    \fontsize{15}{15} \selectfont 
+    { 
+        \begin{flushleft} 
+            #1 
+        \end{flushleft} 
+    }
+}
+% makes main column
+\newcommand{\makemain}[1]{
+    \fontsize{12}{10} \selectfont
+    \begin{flushleft}
+        #1
+    \end{flushleft}
+}
