@@ -1,0 +1,42 @@
+\documentclass[12,a4paper]{article}
+\usepackage{classiccomputing}
+
+\newcommand\postertype{lightgray}
+
+\begin{document}
+
+\makecclogo
+
+\author{} % owner of the device, also used as "Author" in PDF export
+\title{OCTOI-Protokoll}
+\def\subtitle{ISDN über das Internet}
+\def\introduction{Die Neuerung}
+\makeheader{40}{40} % title size 35, subtitle size 40
+
+\includeimage {images/icE1usb-usb_side.jpg}{0.4}
+
+\makebullets{
+    Um ISDN (und andere TDM-Protokolle) \newline
+    wieder nutzbar zu machen, wurde das  \newline
+    Osmocom Community TDM over IP-Protokoll  \newline
+    entwickelt. \newline\newline
+    Mit OCTOI wird ein Primärmultiplexanschluss (2 MBit/s) \newline
+    in UDP-Pakete eingepackt, welche über das Internet  \newline übertragen werden können.
+
+    Damit können interessierte Nutzer per Internet an eine virtuelle Vermittlungsstelle in einem Rechenzentrum angeschlossen werden. \newline
+    Diese virtuelle Vermittlungsstelle (bei uns auch DIVF genannt) vermittelt dann zwischen allen Teilnehmern sowie einigen Diensten. \newline
+
+    Das OCTOI-Protokoll vermeidet die Übertragung von ungenutzten Zeitschlitzen und vermindert so die Bandbreitennutzung im Ruhezustand. \newline
+
+    Implementiert wurde OCTOI bisher in osmo-e1d, einem Linux-Programm. osmo-e1d kann entweder mit einem icE1usb (oben gezeigt) sprechen und eine echte E1-Leitung (Primärmultiplex) per USB bereitstellen oder ein virtuelles DAHDI-E1-Gerät im Linux-Kernel anmelden (trunkdev-Modus). \newline
+
+    Zur Nutzung wird ein Linux-Computer benötigt. Kleine Single-Board-Computer (Raspberry Pi, NanoPi, etc.) sind mehr als ausreichend.
+}
+
+\makemain{
+    
+}
+
+\makefooter
+
+\end{document}
