@@ -1,0 +1,38 @@
+\documentclass[12,a4paper]{article}
+\usepackage{classiccomputing}
+
+\newcommand\postertype{lightgray}
+
+\begin{document}
+
+\makecclogo
+
+\author{} % owner of the device, also used as "Author" in PDF export
+\title{Fax/Modem über VoIP}
+\def\subtitle{Eine Lösung: GPS}
+\def\introduction{Muss es immer der gleiche Takt sein?}
+\makeheader{50}{30} % title size 35, subtitle size 40
+
+%\includeimage {images/icE1usb-usb_side.jpg}{0.4}
+
+\makebullets{
+    Moderne Netze wie das Internet sind asynchron, laufen also nicht mit einem bestimmten Takt.
+    Es gibt auch keine Garantien zur Zuverlässigkeit einer Übertragung. Datenpakete können in der falschen Reihenfolge ankommen, stark verzögert werden oder komplett ausbleiben.
+    \newline\newline
+    Um trotzdem alte Dienste wie Fax/Modem/ISDN nutzen zu können, können einige Tricks genutzt werden:
+    Der Samplingtakt kann dezentral überall dort erzeugt werden, wo er benötigt wird. Er wird allerdings mit einer extrem genauen externen Referenz diszipliniert. Eine besonders ideal geeignete Referenz ist das GPS (sowie die anderen Navigationssatelliten). Jeder GPS-Satellit führt mehrere Atomuhren an Board mit, welche benötigt werden um die Genauigkeit der Positionsbestimmung zu garantieren.\newline
+    Der hochgenaue Takt dieser Uhren wird im GPS-Signal auch übertragen und kann von vielen kommerziellen Empfängern nutzbar gemacht werden.
+    \newline\newline
+    Im OCTOI-Netz werden häufig die icE1usb-Adapter genutzt, welche einen GPS-Empfänger eingebaut haben.
+    Um mit verzögerten und vertauschten Paketen umgehen zu können, wird eine künstliche Verzögerung ("Jitterbuffer") eingebaut.
+    \newline\newline
+    Eine spätere Erweiterung, z.B. zur Synchronisation mittels NTP wäre ebenfalls denkbar.
+}
+
+\makemain{
+    
+}
+
+\makefooter
+
+\end{document}

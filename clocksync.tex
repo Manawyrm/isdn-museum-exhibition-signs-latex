@@ -1,0 +1,39 @@
+\documentclass[12,a4paper]{article}
+\usepackage{classiccomputing}
+
+\newcommand\postertype{lightgray}
+
+\begin{document}
+
+\makecclogo
+
+\author{} % owner of the device, also used as "Author" in PDF export
+\title{Fax/Modem über VoIP}
+\def\subtitle{Asynchrone und synchrone Netze}
+\def\introduction{Auf's richtige Timing kommt es an}
+\makeheader{50}{30} % title size 35, subtitle size 40
+
+%\includeimage {images/icE1usb-usb_side.jpg}{0.4}
+
+\makebullets{
+    VoIP über SIP nutzt genau wie ISDN oft den Sprachcodec G.711a/alaw zur Audioübertragung.
+    Trotzdem funktioniert die Nutzung von Fax/Modem über ISDN wesentlich besser als bei den meisten VoIP-Systemen.
+    \newline\newline
+    Der Grund dafür liegt im Timing: Bei ISDN wird ein Takt vom Netz vorgegeben. Dieser Takt wird zur Übertragung der Bits genutzt, Telefonanlagen, Geräte und Computer synchronisieren sich auf genau diesen Takt.
+    Wenn ein analoges Endgerät angeschlossen wird, wird es mit diesem Takt (oder einer abgeleiteten Frequenz) abgetastet.
+    \newline\newline
+    Bei VoIP stellt jedes Endgerät einen eigenen Takt her (durch lokale Oszillatoren im Gerät). Bei VoIP kommt es daher zu Frequenzdrift. \newline
+    Beispiel: Statt den geforderten 8000 Hz Abtastrate wird mit 8001 oder 7999 Hz gearbeitet. Damit entsteht ein weiterer Messwert pro Sekunde (oder es fehlt ein Messwert pro Sekunde).
+    Diese Unterschiede werden entweder durch Resampling ausgeglichen oder führen zu Pufferüber- oder unterläufen.
+    Beides ist bei Sprachkommunikation nicht tragisch, führt bei Modemverbindungen aber zu Verbindungsabbrüchen.
+    \newline\newline
+    Weitere Effekte wie Jitter (Phasenrauschen) werden beim Design von VoIP-Systemen häufig ebenfalls ignoriert, weil sie für Sprache fast irrelevant sind.
+}
+
+\makemain{
+    
+}
+
+\makefooter
+
+\end{document}
