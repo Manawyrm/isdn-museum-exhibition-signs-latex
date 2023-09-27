@@ -1,0 +1,37 @@
+\documentclass[12,a4paper]{article}
+\usepackage{classiccomputing}
+
+\newcommand\postertype{lightgray}
+
+\begin{document}
+
+\makecclogo
+
+\author{} % owner of the device, also used as "Author" in PDF export
+\title{RIPterm / RIPscrip}
+\def\subtitle{Vektorgrafik für Mailboxen}
+\def\introduction{Markteinführung 1992}
+\makeheader{35}{40} % title size 35, subtitle size 40
+
+%\includeimage {images/Livingston_Portmaster3_top.png}{0.4}
+
+\makebullets{
+    DOS-Software für Einwahl in Mailboxen \newline
+    Auflösung: EGA 640 x 350  \newline
+    Statt ASCII/ANSI-Text werden Vektorgrafikbefehle übertragen \newline
+}
+
+\makemain{
+    Terminalprogramme für Einwahl in Mailboxen über das Telefonnetz waren üblicherweise Textbasiert und
+    existierten für alle unterschiedlichen Betriebssysteme und Rechnerarchitekturen.
+
+    Die Amerikanische Firma {\em TeleGrafX Communications} entwickelte eine Sprache zur Beschreibung und
+    Übertragung von Vektorgrafiken (RIPscrip) sowie das Terminalprogramm RIPterm.  Dies wurde von spezieller
+    Mailboxsoftware dazu benutzt, dem Benutzer grafische Mailbox-Menüs und Medienkunst zu präsentieren.
+}
+
+\includegraphics[width=0.9\linewidth]{images/HOUND.RIP.png}
+
+\makefooter
+
+\end{document}
