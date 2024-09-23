@@ -1,0 +1,48 @@
+\documentclass[12,a4paper]{article}
+\usepackage{classiccomputing}
+
+\newcommand\postertype{lightgray}
+
+\begin{document}
+
+\makecclogo
+
+\author{LaF0rge} % owner of the device, also used as "Author" in PDF export
+\title{T-DisplayTel}
+\def\subtitle{ISDN-Telefon mit BTX}
+\def\introduction{Markteinführung 1995}
+\makeheader{40}{40} % title size 60, subtitle size 40
+
+\includeimage {images/t-displaytel.jpg}{0.4}
+
+\makebullets{
+    Land: Deutschland \newline
+    Preis: unbekannt \newline
+   
+    Architektur: 16 Bit (V35, kompatibel zu 8088) \newline
+    CPU: NEC uPD70236 \newline
+    % RAM: 
+    % ROM: 
+    % Grafik: 
+    % Sound:
+
+    Hersteller: Unbekannt \newline
+    BTX-Dekoder IC: LOEWE \newline
+    ISDN-Chipsatz: Siemens ISAC + HSCX \newline
+}
+
+\makemain{
+    Das T-DisplayTel ist ein ISDN-Tischtelefon mit eingebautem BTX-Dekoder.\newline
+    
+    Die Übertragung von BTX über ISDN war relativ selten, da fast alle BTX-Dekoder mit analogen Modems
+    ausgestattet waren.  Es wird hierbei T.70 NL über X.75 im B-Kanal verwendet.\newline
+    
+    BTX-Dekoder hatten üblicherweise Röhrenbildschirme bzw. wurden am Fernseher angeschlossen.
+    LCD-Flachbildschirme wie in diesem Gerät sind eine Seltenheit.
+
+    Es wird vermutet, dass die T-DisplayTel relativ selten verkauft wurden, da sie mutmasslich teuer waren und erst auf den Markt kamen, als BTX bereits seine Bedeutung weitgehend verloren hatte.
+}
+
+\makefooter
+
+\end{document}
